@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -53,7 +54,7 @@ public class Solution {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] graphNodesEdges = br.readLine().split(" ");
+        String[] graphNodesEdges = BoundedLineReader.readLine(br, 5_000_000).split(" ");
         int graphNodes = Integer.parseInt(graphNodesEdges[0].trim());
         int graphEdges = Integer.parseInt(graphNodesEdges[1].trim());
 
@@ -61,21 +62,21 @@ public class Solution {
         int[] graphTo = new int[graphEdges];
 
         for (int i = 0; i < graphEdges; i++) {
-            String[] graphFromTo = br.readLine().split(" ");
+            String[] graphFromTo = BoundedLineReader.readLine(br, 5_000_000).split(" ");
             graphFrom[i] = Integer.parseInt(graphFromTo[0].trim());
             graphTo[i] = Integer.parseInt(graphFromTo[1].trim());
         }
 
         int[] ids = new int[graphNodes];
 
-        String[] idsItems = br.readLine().split(" ");
+        String[] idsItems = BoundedLineReader.readLine(br, 5_000_000).split(" ");
 
         for (int i = 0; i < graphNodes; i++) {
             int idsItem = Integer.parseInt(idsItems[i]);
             ids[i] = idsItem;
         }
 
-        int val = Integer.parseInt(br.readLine().split(" ")[0]);
+        int val = Integer.parseInt(BoundedLineReader.readLine(br, 5_000_000).split(" ")[0]);
         br.close();
 
         int ans = findShortest(graphNodes, graphFrom, graphTo, ids, val);

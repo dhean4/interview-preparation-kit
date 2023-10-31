@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -72,7 +73,7 @@ public class Solution {
 
     private String nextToken() throws IOException {
         while (!tokenizer.hasMoreTokens()) {
-            String line = in.readLine();
+            String line = BoundedLineReader.readLine(in, 5_000_000);
             if (line == null) {
                 return null;
             }

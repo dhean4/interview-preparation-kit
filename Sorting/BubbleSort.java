@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import static java.lang.Integer.parseInt;
 
 import java.io.BufferedReader;
@@ -15,7 +16,7 @@ public class Day20_Sorting {
 	static String lastLine;
 	
 	static void newLine() throws IOException {
-		lastLine = BR.readLine();
+		lastLine = BoundedLineReader.readLine(BR, 5_000_000);
 		st = new StringTokenizer(lastLine);
 	}
 	

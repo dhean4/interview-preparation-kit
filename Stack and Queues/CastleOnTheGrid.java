@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -131,14 +132,14 @@ public class Solution {
         final InputStreamReader in = new InputStreamReader(System.in);
         final BufferedReader reader = new BufferedReader(in);
         try {
-            String str = reader.readLine();
+            String str = BoundedLineReader.readLine(reader, 5_000_000);
             final int N = Integer.parseInt(str);
 
             final char[][] array = new char[N][];
             for(int n=0; n<N; n++)
-                array[n] = reader.readLine().toCharArray();
+                array[n] = BoundedLineReader.readLine(reader, 5_000_000).toCharArray();
 
-            str = reader.readLine();
+            str = BoundedLineReader.readLine(reader, 5_000_000);
             final String[] ary = str.split(" ");
             final int a = Integer.parseInt(ary[0]);
             final int b = Integer.parseInt(ary[1]);
