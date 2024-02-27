@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -20,12 +21,12 @@ public class Solution {
     BufferedWriter out = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
     List<Integer> result = new ArrayList<>();
-    int n = Integer.parseInt(in.readLine());
+    int n = Integer.parseInt(BoundedLineReader.readLine(in, 5_000_000));
     HashMap<Long, Long> map = new HashMap<Long, Long>();
     HashMap<Long, Long> freq = new HashMap<Long, Long>();
 
     for (int i = 0; i < n; i++) {
-        StringTokenizer s= new StringTokenizer(in.readLine());
+        StringTokenizer s= new StringTokenizer(BoundedLineReader.readLine(in, 5_000_000));
         int a = Integer.parseInt(s.nextToken());
         final long b = Long.parseLong(s.nextToken());
         switch (a) {

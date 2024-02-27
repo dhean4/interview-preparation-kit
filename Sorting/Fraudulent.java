@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 
@@ -5,11 +6,11 @@ public class Solution {
 
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] data = br.readLine().split(" ");
+        String[] data = BoundedLineReader.readLine(br, 5_000_000).split(" ");
         int n = Integer.parseInt(data[0]);
         int d = Integer.parseInt(data[1]);
         List<Integer> arr = new ArrayList();
-        Arrays.asList(br.readLine().split(" ")).forEach(val -> arr.add(Integer.parseInt(val)));
+        Arrays.asList(BoundedLineReader.readLine(br, 5_000_000).split(" ")).forEach(val -> arr.add(Integer.parseInt(val)));
         int[] hash = new int[201];
         int sum,i,ans=0,j,k;
         for(i = 0; i<=200; i++){
