@@ -1,5 +1,6 @@
 import java.io.*;
 import java.math.*;
+import java.nio.file.Files;
 import java.security.*;
 import java.text.*;
 import java.util.*;
@@ -51,7 +52,7 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = Files.newBufferedWriter(System.getenv("OUTPUT_PATH").toPath());
 
         String[] graphNodesEdges = br.readLine().split(" ");
         int graphNodes = Integer.parseInt(graphNodesEdges[0].trim());

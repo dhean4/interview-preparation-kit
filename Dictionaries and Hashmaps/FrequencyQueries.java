@@ -1,5 +1,6 @@
 import java.io.*;
 import java.math.*;
+import java.nio.file.Files;
 import java.security.*;
 import java.text.*;
 import java.util.*;
@@ -17,7 +18,7 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter out = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+    BufferedWriter out = Files.newBufferedWriter(System.getenv("OUTPUT_PATH").toPath());
 
     List<Integer> result = new ArrayList<>();
     int n = Integer.parseInt(in.readLine());
