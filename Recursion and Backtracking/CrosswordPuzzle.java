@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.lang.*;
 import java.util.*;
 import java.util.stream.*;
@@ -35,7 +36,7 @@ public class Solution {
                         "+++++-++++" };*/
     String[] sInput = new String[10];
     for(int i = 0; i < sInput.length; i++) {
-      sInput[i] = br.readLine();
+      sInput[i] = BoundedLineReader.readLine(br, 5_000_000);
     }
     char[][] input = transformInput(sInput);
     //printMatrix(input); //PRINT
@@ -47,7 +48,7 @@ public class Solution {
     String wordsToFill;
     //wordsToFill = "LONDON;DELHI;ICELAND;ANKARA";
     //wordsToFill = "SYDNEY;TURKEY;DETROIT;EGYPT;PARIS";
-    wordsToFill = br.readLine();
+    wordsToFill = BoundedLineReader.readLine(br, 5_000_000);
     int wordCount = fillWords(strWords, wordsToFill);
     //StrWord.print(strWords); //PRINT
 
