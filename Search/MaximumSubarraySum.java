@@ -236,7 +236,9 @@ public class B {
 	}
 
 	private static boolean isSpaceChar(int c) { return !(c >= 33 && c <= 126); }
-	private static int skip() { int b; while((b = readByte()) != -1 && isSpaceChar(b)); return b; }
+	private static int skip() { int b; while((b = readByte()) != -1 && isSpaceChar(b)){
+	    ;
+	} return b; }
 
 	private static double nd() { return Double.parseDouble(ns()); }
 	private static char nc() { return (char)skip(); }
