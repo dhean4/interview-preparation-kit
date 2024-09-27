@@ -1,5 +1,6 @@
 import java.io.*;
 import java.math.*;
+import java.nio.file.Files;
 import java.security.*;
 import java.text.*;
 import java.util.*;
@@ -37,7 +38,7 @@ static long triplets(int[] a, int[] b, int[] c) {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = Files.newBufferedWriter(System.getenv("OUTPUT_PATH").toPath());
 
         String[] lenaLenbLenc = scanner.nextLine().split(" ");
 
