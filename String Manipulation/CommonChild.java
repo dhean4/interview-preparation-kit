@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -9,8 +10,8 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
          BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-    String s=br.readLine();
-    String s2=br.readLine();
+    String s=BoundedLineReader.readLine(br, 5_000_000);
+    String s2=BoundedLineReader.readLine(br, 5_000_000);
     int M = s.length();
     int N = s2.length();
 
