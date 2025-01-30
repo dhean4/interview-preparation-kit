@@ -328,7 +328,9 @@ public class E {
 	}
 
 	private boolean isSpaceChar(int c) { return !(c >= 33 && c <= 126); }
-	private int skip() { int b; while((b = readByte()) != -1 && isSpaceChar(b)); return b; }
+	private int skip() { int b; while((b = readByte()) != -1 && isSpaceChar(b)){
+	    ;
+	} return b; }
 
 	private double nd() { return Double.parseDouble(ns()); }
 	private char nc() { return (char)skip(); }
